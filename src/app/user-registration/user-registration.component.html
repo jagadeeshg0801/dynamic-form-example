@@ -1,0 +1,29 @@
+<div class="container">
+    <form [formGroup]="regForm" (ngSubmit)="submitForm()">
+        <div *ngFor="let control of formControls">
+            <ng-container [ngSwitch]="control.inputType">
+                <div class="form-group">
+                    <label>{{control.label}}</label>
+                    <input *ngSwitchCase="'text'" class="form-control" [formControlName]="control.name" [id]="control.name" [type]="control.inputType">
+
+                    <!-- For Redio button -->
+                    <ng-container *ngSwitchCase="'radio'">
+                        <div class="form-group form-check-inline" style="margin: 14px;">
+                            <div *ngFor="let option of control.options" class="form-check form-check-inline">
+                                <input type="radio"class="form-check-input"  [formControlName]="control.name" [value]="option.value" >
+                                <label class="form-check-label">{{option.key}}</label>
+                            </div>
+                        </div>
+                      </ng-container>
+                </div>
+                
+            </ng-container>
+           
+        </div>
+        <div class="pull-right marginTop10">
+            <button class="btn btn-secondary" type="reset">Reset</button>
+            <button class="btn btn-primary" type="submit">Submit</button>
+        </div>
+
+    </form>
+</div>
