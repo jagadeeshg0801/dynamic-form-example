@@ -1,0 +1,73 @@
+[
+    {
+        "type": "input",
+        "name": "name",
+        "label": "Name",
+        "inputType": "text",
+        "validations": [
+           { 
+             "name" : "required",
+             "validator":"required",
+             "message": "Name is Required"
+           }
+        ]
+
+    },
+    {
+        "type": "input",
+        "name": "email",
+        "label": "Email",
+        "inputType": "text",
+        "validations": [
+           { 
+             "name" : "required",
+             "validator":"required",
+             "message": "Email is Required"
+           },
+           {
+            "name" : "email",
+            "validator":"email",
+            "message": "Email is Invalid"
+          }
+        ]
+
+    },
+    {
+        "type": "input",
+        "name": "gender",
+        "label": "Gender",
+        "inputType": "radio",
+        "validations": [
+           { 
+             "name" : "required",
+             "validator":"required",
+             "message": "Gender is Required"
+           }
+        ],
+        "options":[
+            {"key": "male", "value": "Male"},
+            {"key": "female", "value": "Female"}
+        ]
+
+    },
+    {
+        "type": "input",
+        "name": "mobile",
+        "label": "Mobile Number",
+        "inputType": "text",
+        "validations": [
+           { 
+             "name" : "required",
+             "validator":"required",
+             "message": "Email is Required"
+           },
+           {
+            "name" : "pattern",
+            "validator":"mobile",
+            "message": "Email is Invalid"
+          }
+        ]
+
+    }
+
+]
