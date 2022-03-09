@@ -5,6 +5,9 @@
                 <div class="form-group">
                     <label>{{control.label}}</label>
                     <input *ngSwitchCase="'text'" class="form-control" [formControlName]="control.name" [id]="control.name" [type]="control.inputType">
+                    <textarea  class="form-control"  *ngSwitchCase="'textarea'" [formControlName]="control.name" [id]="control.name">
+
+                    </textarea>
 
                     <!-- For Redio button -->
                     <ng-container *ngSwitchCase="'radio'">

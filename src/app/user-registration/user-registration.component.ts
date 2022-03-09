@@ -41,7 +41,7 @@ export class UserRegistrationComponent implements OnInit {
               break;
             case 'pattern':
               if(validator.validator == 'mobile'){
-                validations.push(Validators.pattern(/((\(\d{3}\) ?)|(\d{3}-))?\d{3}-\d{4}/));
+                validations.push(Validators.pattern("^((\\+91-?)|0)?[0-9]{10}$"));
               }
               break;
             default :
