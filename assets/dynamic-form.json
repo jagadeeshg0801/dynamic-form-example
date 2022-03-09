@@ -68,6 +68,20 @@
           }
         ]
 
+    },
+    {
+        "type": "input",
+        "name": "address",
+        "label": "Address for Communication",
+        "inputType": "textarea",
+        "validations": [
+           { 
+             "name" : "required",
+             "validator":"required",
+             "message": "Address is Required"
+           }
+        ]
+
     }
 
 ]
