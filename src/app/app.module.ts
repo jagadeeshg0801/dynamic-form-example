@@ -10,6 +10,7 @@ import { CheckBoxCtrlComponent } from './component/check-box-ctrl/check-box-ctrl
 
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { VehiclesComponent } from './vehicles/vehicles.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     UserRegistrationComponent,
     TextCtrlComponent,
     RadioCtrlComponent,
-    CheckBoxCtrlComponent
+    CheckBoxCtrlComponent,
+    VehiclesComponent
   ],
   imports: [
     BrowserModule,
