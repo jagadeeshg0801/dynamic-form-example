@@ -20,20 +20,21 @@ export class VehiclesComponent implements OnInit {
   getAllVehicles() {
     this.vehicleService.getAllVehicles().subscribe((res: any) => {
       console.log(res);
-      this.vehiclesList = res || [];
+      this.vehiclesList = res.data || [];
+      const abc = this.vehiclesList.map((ele:any)=> {return {countryName: ele.country, breedName: ele.breed}});
       // const updateList = this.vehiclesList.pipe(map((ele: any) => {
       //   return { countryName: ele.country, domainNames: ele.domains }
       // }));
       let obj;
       let  updateList:any =[];
-      this.vehiclesList.forEach((ele:any) => {
-          obj = { countryName: ele.country, domainNames: ele.domains }
-          updateList.push(obj);
-      });
+      // this.vehiclesList.forEach((ele:any) => {
+      //     obj = { countryName: ele.country, domainNames: ele.domains }
+      //     updateList.push(obj);
+      // });
 
-      console.log('updateList', updateList)
+      console.log('updateList', abc)
     },
-      (err) => {
+      (err:any) => {
 
       })
   }
