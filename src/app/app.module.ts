@@ -11,7 +11,7 @@ import { CheckBoxCtrlComponent } from './component/check-box-ctrl/check-box-ctrl
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { VehiclesComponent } from './vehicles/vehicles.component';
-
+import { TableModule } from 'primeng/table';
 @NgModule({
   declarations: [
     AppComponent,
@@ -26,7 +26,8 @@ import { VehiclesComponent } from './vehicles/vehicles.component';
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    TableModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -9,6 +9,12 @@ import {map} from 'rxjs/operators';
 export class VehiclesComponent implements OnInit {
 
   vehiclesList: any = [];
+  headerNames : any = [
+    {fieldName: 'countryName', displayName: "Country Name" },
+    {fieldName: 'breedName', displayName: "Breed Name" },
+    
+
+  ]
   constructor(private vehicleService: VehicleService) { }
 
   ngOnInit(): void {
@@ -20,8 +26,8 @@ export class VehiclesComponent implements OnInit {
   getAllVehicles() {
     this.vehicleService.getAllVehicles().subscribe((res: any) => {
       console.log(res);
-      this.vehiclesList = res.data || [];
-      const abc = this.vehiclesList.map((ele:any)=> {return {countryName: ele.country, breedName: ele.breed}});
+      const vehiclesList = res.data || [];
+      this.vehiclesList = vehiclesList.map((ele:any)=> {return {countryName: ele.country, breedName: ele.breed}});
       // const updateList = this.vehiclesList.pipe(map((ele: any) => {
       //   return { countryName: ele.country, domainNames: ele.domains }
       // }));
@@ -32,7 +38,7 @@ export class VehiclesComponent implements OnInit {
       //     updateList.push(obj);
       // });
 
-      console.log('updateList', abc)
+      console.log('updateList', this.vehiclesList)
     },
       (err:any) => {
 

@@ -1,1 +1,24 @@
 <p>vehicles works!</p>
+<ng-container *ngTemplateOutlet="userListPanel"></ng-container>
+
+<ng-template #userListPanel>
+    <p-table [columns]="headerNames" [value]="vehiclesList">
+        <ng-template pTemplate="caption" let-title>
+          <h6 style="color:blue"> Country Data</h6>
+        </ng-template>
+        <ng-template pTemplate="header" let-columns>
+            <tr>
+                <th *ngFor="let col of columns">
+                  {{col.fieldName}}
+                </th>
+            </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-rowData let-columns="columns">
+            <tr>
+                <td *ngFor="let col of columns">
+                 {{rowData[col.fieldName]}} 
+                </td>
+            </tr>
+        </ng-template>
+    </p-table>
+</ng-template>
