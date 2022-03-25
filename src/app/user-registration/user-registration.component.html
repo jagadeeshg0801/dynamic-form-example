@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container reg-form-cls">
     <form [formGroup]="regForm" (ngSubmit)="submitForm()">
         <div *ngFor="let control of formControls">
             <ng-container [ngSwitch]="control.inputType">
@@ -18,12 +18,21 @@
                             </div>
                         </div>
                       </ng-container>
+
+                    <ng-container *ngSwitchCase="'select'">
+                        <div class="form-group">
+                            <select class="form-control" [formControlName]="control.name">
+                                <option value="">Select</option>
+                                <option *ngFor="let opt of control.options" [value]="opt.key">{{opt.value}}</option>
+                            </select>
+                        </div>
+                    </ng-container>
                 </div>
                 
             </ng-container>
            
         </div>
-        <div class="pull-right marginTop10">
+        <div class=" marginTop10">
             <button class="btn btn-secondary" type="reset">Reset</button>
             <button class="btn btn-primary" type="submit">Submit</button>
         </div>

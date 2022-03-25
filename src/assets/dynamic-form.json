@@ -51,6 +51,24 @@
 
     },
     {
+      "type": "select",
+      "name": "country",
+      "label": "Country",
+      "inputType": "select",
+      "validations": [
+         { 
+           "name" : "required",
+           "validator":"required",
+           "message": "Country is Required"
+         }
+      ],
+      "options":[
+          {"key": "ind", "value": "IND"},
+          {"key": "pak", "value": "PAK"}
+      ]
+
+  },
+    {
         "type": "input",
         "name": "mobile",
         "label": "Mobile Number",

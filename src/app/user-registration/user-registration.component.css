@@ -1,0 +1,12 @@
+.reg-form-cls {
+    width: 30%;
+    background: #ffd;
+    border: #000 2px solid;
+    border-radius: 5px;
+    padding: 20px 15px;
+}
+
+
+.marginTop10{
+    text-align: right;
+}

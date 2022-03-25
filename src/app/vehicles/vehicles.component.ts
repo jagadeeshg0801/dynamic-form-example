@@ -33,6 +33,8 @@ export class VehiclesComponent implements OnInit {
       // }));
       let obj;
       let  updateList:any =[];
+      
+      //INSTEAD OF map Operator Use below logic
       // this.vehiclesList.forEach((ele:any) => {
       //     obj = { countryName: ele.country, domainNames: ele.domains }
       //     updateList.push(obj);

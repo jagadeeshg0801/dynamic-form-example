@@ -11,7 +11,7 @@ export class VehicleService {
   constructor(private http: HttpClient) { }
  //https://mixedanalytics.com/blog/list-actually-free-open-no-auth-needed-apis/
   getAllVehicles():Observable<any>{
-  return  this.http.get('https://catfact.ninja/breeds').pipe(map((res:any)=> {return {pageSize: res.per_page, data: res.data}})); 
+  return  this.http.get('https://catfact.ninja/breeds').pipe(map((res:any)=> {return {pageSize: res.per_page, data: res.data, count: res.total}})); 
   // By using map operator, we are transforming data which is coming from backend
   // Pipe method can be used to together multiple functions , most of the time we use this for observables data
   }
