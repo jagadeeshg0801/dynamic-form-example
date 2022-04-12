@@ -3,6 +3,9 @@ import { RouterTestingModule } from '@angular/router/testing';
 import { AppComponent } from './app.component';
 
 describe('AppComponent', () => {
+
+  let component: AppComponent;
+ let  name: string = 'test';
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [
@@ -12,7 +15,17 @@ describe('AppComponent', () => {
         AppComponent
       ],
     }).compileComponents();
+    name = 'laxman';
+
+    let fixture = TestBed.createComponent(AppComponent);
+    component = fixture.componentInstance;
+    fixture.detectChanges(); // angualr lifecycle hooks
   });
+
+  afterEach(()=>{
+    
+    name = '';
+  })
 
   it('should create the app', () => {
     const fixture = TestBed.createComponent(AppComponent);
